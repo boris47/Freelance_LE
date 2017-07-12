@@ -1,0 +1,13 @@
+Author=boris47"
+MainSourceFile=""
+MultiLineCommentOpenToken="//"
+SingleLineCommentToken="//"
+CommandLine=""
+Copyright=""
+WindowsPublishPath=""
+AndroidPublishPath=""
+iOSPublishPath=""
+MacOSPublishPath=""
+Template="Advanced First-Person Shooter"
+AppID=0
+DepotID=0

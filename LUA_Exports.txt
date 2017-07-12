@@ -1,0 +1,215 @@
+Methods for object cActor
+Methods for object cAudioSrc
+    IsPlaying( void ) = boolean
+    SetVolume( float ) = cAudioSrc
+    GetVolume( void ) = float
+    SetPitch( float ) = cAudioSrc
+    GetPitch( void ) = float
+    FadeIn( int, bool ) = cAudioSrc
+    FadeOut( void ) = void
+    Play2D( bool ) = cAudioSrc
+    Play3D( Vec3, bool ) = cAudioSrc
+Class AudioDevice Metatable: cAudioDevice
+    SetMainVolume( float ) = void
+    GetMainVolume( void ) = float
+    SetMusicVolume( float ) = void
+    GetMusicVolume( void ) = float
+    SetSoundsVolume( float ) = void
+    GetSoundsVolume( void ) = float
+    GetListener( void ) = Listener
+    FindSource( string ) = cAudioSrc
+    LoadSource( string ) = cAudioSrc
+    Stop( cAudioSrc or string ) = void
+    Play2D( cAudioSrc or string, boolean ) = cAudioSrc
+    Play3D( cAudioSrc or string, Vec3, boolean ) = cAudioSrc
+    PlayMusic( cAudioSrc or string, boolean ) = cAudioSrc
+    FadeIn( cAudioSrc or string, int, boolean ) = cAudioSrc
+    FadeOut( cAudioSrc or string, int ) = void
+Class CamManager Metatable: cCamManager  with constructor
+    IsRotating( void ) = boolean
+    SetParent( cEntity ) = boolean
+    GetParent( void ) = cEntity
+    GetCamera( void ) = Camera
+    GetStdHeight( void ) = int
+    GetPointedDistance( void ) = float
+    SetCameraFirstPerson( void ) = void
+    SetCameraThirdPerson( void ) = void
+    SetCameraFree( void ) = void
+    IsCameraAttached( void ) = bolean
+    IsCameraFree( void ) = bolean
+    GetHeadBobEffect( void ) = cHeadBob
+    GetHeadMoveEffect( void ) = cHeadMove
+    GetHeadLeanEffect( void ) = cHeadLean
+    GetZoomEffect( void ) = cZoom
+    Detach( void ) = void
+    Attach( void ) = void
+Methods for object cHeadBob
+    Enable( void ) = void
+    Disable( void ) = void
+    IsActive( void ) = boolean
+    GetAmplitudeMul( void ) = float
+    SetAmplitudeMul( float ) = void
+    GetSpeedMul( void ) = float
+    SetSpeedMul( float ) = void
+Methods for object cHeadMove
+    Enable( void ) = void
+    Disable( void ) = void
+    IsActive( void ) = boolean
+    GetAmplitudeMul( void ) = float
+    SetAmplitudeMul( float ) = void
+    GetSpeedMul( void ) = float
+    SetSpeedMul( float ) = void
+Methods for object cHeadLean
+    Enable( void ) = void
+    Disable( void ) = void
+    IsActive( void ) = boolean
+    GetAmplitudeMul( void ) = float
+    SetAmplitudeMul( float ) = void
+    GetSpeedMul( void ) = float
+    SetSpeedMul( float ) = void
+Methods for object cZoom
+    Enable( void ) = void
+    Disable( void ) = void
+    IsActive( void ) = boolean
+    IsZoomed( void ) = boolean
+    GetCamZoom( void ) = float
+Class Engine Metatable: cEngine  with constructor
+    AudioDevice( void ) = cAudioDevice
+    DrawInfo( string ) = void
+    NewID( void ) = int
+Methods for object cEntity
+    IsHuman( void ) = boolean
+    IsLiveEntity( void ) = boolean
+    ID( void ) = int
+    Name( void ) = string
+    Section( void ) = string
+    SetParent( cEntity ) = void
+    GetParent( void ) = cEntity
+    GetEntity( void ) = Entity
+    Stop( void ) = void
+    GetType( void ) = int
+    SetRotationP1ToP2( Vec3 ) = void
+    GetRotationP1ToP2( void ) = Vec3
+Methods for object cFlashLight
+    GetRotation( void ) = Vec3
+    SetRotation( Vec3 ) = void
+    Enable( void ) = void
+    Disable( void ) = void
+    IsEnabled( void ) = boolean
+    Activate( void ) = void
+    Deactivate( void ) = void
+    IsActive( void ) = boolean
+Methods for object cHuman
+    IsDragging( void ) = boolean
+    SetDragging( boolean ) = void
+    GetDraggedEntity( void ) = Entity
+    DropEntityDragged( void ) = void
+Namespace InputManager
+    Forward( void ) = bool
+    Backward( void ) = bool
+    StrafeLeft( void ) = bool
+    StrafeRight( void ) = bool
+    LeanLeft( void ) = bool
+    LeanRight( void ) = bool
+    Crouch( void ) = bool
+    Jump( void ) = bool
+    Run( void ) = bool
+    Use( void ) = bool
+    Item1( void ) = bool
+    Item2( void ) = bool
+    Item3( void ) = bool
+    Item4( void ) = bool
+Methods for object cInventory
+Class Level Metatable: cLevel  with constructor
+    Name( void ) = string
+    GetActor( void ) = cActor
+    GetTimeFactor( void ) = float
+    SetTimeFactor( float ) = void
+    NewID( void ) = int
+    Spawn( cEntity ) = string, Vec3, Vec3, (Vec3)
+    FindByID( int ) = cEntity
+    FindByName( string ) = cEntity
+    Release( int ) = void
+    WeatherManager( void ) = cWeatherManager
+Methods for object cLiveEntity
+    IsHuman( void ) = boolean
+    SetHealth( float ) = void
+    GetHealth( void ) = float
+    SetStamina( float ) = void
+    GetStamina( void ) = float
+    SetViewRange( float ) = void
+    GetViewRange( void ) = float
+    IsIdle( void ) = boolean
+    IsMoving( void ) = boolean
+    IsLeaning( void ) = boolean
+    IsWalking( void ) = boolean
+    IsRunning( void ) = boolean
+    IsJumping( void ) = boolean
+    IsHanging( void ) = boolean
+    IsFalling( void ) = boolean
+    IsCrouched( void ) = boolean
+    IsPlainWalking( void ) = boolean
+    IsFlying( void ) = boolean
+    IsSwimming( void ) = boolean
+    IsClimbing( void ) = boolean
+    SetMoving( boolean ) = void
+    SetLeaning( boolean ) = void
+    SetWalking( boolean ) = void
+    SetRunning( boolean ) = void
+    SetJumping( boolean ) = void
+    SetHanging( boolean ) = void
+    SetFalling( boolean ) = void
+    SetCrouched( boolean ) = void
+    SetPlainWalking( void ) = void
+    SetFlying( void ) = void
+    SetSwimming( void ) = void
+    SetClimbing( void ) = void
+    ClearStates( void ) = void
+    SetWalkSpeed( float ) = void
+    GetWalkSpeed( void ) = float
+    SetRunSpeed( float ) = void
+    GetRunSpeed( void ) = float
+    SetCrouchSpeed( float ) = void
+    GetCrouchSpeed( void ) = float
+    SetJumpForce( float ) = void
+    GetJumpForce( void ) = float
+    SetMaxItemMass( float ) = void
+    GetMaxItemMass( void ) = float
+    GetInventory( void ) = cInventory
+    GetFlashLight( void ) = cFlashLight
+Methods for object cList
+    GetData( void ) = table
+Methods for object cSection
+    Lines( void ) = int
+    HasKey( string ) = bool
+    GetRawValue( string ) = string
+    bGetInt( string, (int) ) = boolean, int
+    bGetBool( string, (boolean) ) = boolean, boolean
+    bGetFloat( string, (float) ) = boolean, float
+    bGetString( string, (string) ) = boolean, string
+    bGetVec2( string ) = bool, Vec2
+    bGetVec3( string ) = bool, Vec3
+    bGetVec4( string ) = bool, Vec4
+Class LTXReader Metatable: cLTXReader  with constructor
+    LoadFile( string ) = boolean
+    Loaded( string ) = boolean
+    GetSection( string ) = cSection
+    GetList( string ) = cList
+    PrintMap( (string) ) = void
+Namespace Utils
+    cMsgINFO( string ) = void
+    cMsgDBG( string ) = void
+    FileExists( string ) = boolean
+    GetAsEntity( cEntity ) = Entity
+    Vec3Curve( float or Vec3, Vec3, float ) = Vec3
+    Vec3Lerp( Vec3, Vec3, float ) = Vec3
+Methods for object cWeatherManager
+    SetDynamic( bool ) = void
+    SetTime( float or string ) = void
+    GetTime( void ) = float
+    GetTimeAsString( float ) = string
+    TansformTime( string ) = float, boolean
+    GetSun( void ) = DirectionalLight
+    SetSunShader( Shader ) = void
+    SetFogShader( Shader ) = void
+    GetAmbientColor( void ) = Vec3

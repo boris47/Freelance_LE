@@ -1,0 +1,71 @@
+
+UPDATEWORLD VS UPDATEPHYSICS
+http://www.leadwerks.com/werkspace/topic/15058-updateworld-vs-updatephysics/
+http://www.leadwerks.com/werkspace/topic/11632-updatephysics-vs-updateworld/
+
+UpdateWorldHook is called as fast as the PC ( every cycle ( frame ) )
+UpdatePhysicsHook is called at a constant rate ( promises to run x times per second )
+
+http://www.leadwerks.com/werkspace/topic/4560-correct-way-to-update-physics-for-all-fps/
+UpdatePhysicsCallback
+This will be called 60 times per second, regardless of framerate
+
+The engine has a simple hook system now, u can register and unregister periodic callback
+
+Okay, now every entity has virtual PhysicUpdate and OnFrame function
+
+I'm considering to make camera a cEntity;
+
+ok allora appena parte il gioco, il menu principale viene visualizzato
+se si preme inizia partita allora il livello viene inizializzato e caricato.
+appena si cambia livello allora si resetta tutto e si carica il necessario per il nuovo
+si resetta tutto anche quando si vuole ritornare al menu principale
+
+e poi Leadwerks::Package... a cosa mi serve????????
+
+TODO:
+v	Far riprodurre il suoni dei passi in base al materiale del "terreno" nel FootstepManager
+	Quindi rinominare il file materiale o le cartelle dei suoni per far corrispondere
+	Nella classe cWorld usare AABB per verificare un RayPick ad Area
+	Struttura l'engine per un riavvio, tipo dopo cambio risoluzione o altre opzioni
+
+
+
+
+//
+
+UI
+UI_Event_Listener
+Launch_MainMenu
+	Start New Game
+	Load
+	Options
+		Graphics
+		Audio
+		Controls
+		Game
+	Exit { ask confirmation }
+
+InGame_MainMenu
+	Quicksave
+	Save { Overwrite existing file }
+	Load { Load another state confirmation }
+	Options
+		Graphics
+		Audio
+		Controls
+		Game
+	Exit { ask confirmation }
+
+
+GAMESTATE
+	MENU, INGAME
+
+MENU_SCRRENS
+	LOAD_SCREEN
+	OPTIONS_SCREEN
+
+MESSAGEBOX
+	LOAD_INGAME { Load another state confirmation }
+	SAVE_OVERWRITE { Overwrite existing file }
+	EXIT { ask confirmation }

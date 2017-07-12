@@ -1,0 +1,15 @@
+
+
+class "sononaclasse"
+
+function sononaclasse:Ciao()
+	Engine():DrawInfo( "ciaonuovo" );
+end
+
+class "naltraclasse" ( sononaclasse )
+
+
+
+function ThisPrint( sString )
+	Engine():DrawInfo( sString );
+end

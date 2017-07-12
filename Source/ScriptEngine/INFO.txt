@@ -1,0 +1,31 @@
+
+
+Esposizione oggetti:
+
+	#include "ScriptEngine\ScriptEngine.h"
+	#include "ScriptEngine\ScriptExtension.h"
+
+//	aggiungere header necessari per esporre la classe dell'oggetto Es:
+	#include "Game\Entities\LiveEntities\Humans\Actor\Actor.h"
+
+
+	bool LUA_Expose_Actor( lua_State *L ) {
+		LUAClass Actor = LUAClass( L, "Actor", lua_Actor_Call );
+		LUA_CLASS_METHOD( Actor, AsLiveEntity )
+
+		if ( !Actor.IsOK() ) {
+			cMsgCRT( "LUA_Expose_Actor: cActor exposure fail" );
+			return false;
+		}
+
+		return true;
+	}
+
+Durante l'esposizione potrei generare un file con tutte le funzioni, classi e metodi esposti
+-- STA FACENDO
+
+da valutare l'esposione di costanti, anche incluse in spazi di nomi
+
+da completare inventory ed human
+
+COMPLETARE ESPOSIZIONE
